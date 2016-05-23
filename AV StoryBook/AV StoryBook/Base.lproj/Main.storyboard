@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hZI-w4-mnR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Story Part View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="StoryPart" id="BYZ-38-t0r" customClass="StoryPartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dAW-Be-g3W">
+                                <rect key="frame" x="0.0" y="28" width="600" height="217"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="L4t-EF-C8v"/>
+                                    <constraint firstAttribute="height" constant="217" id="ZUu-ts-vcb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZUu-ts-vcb"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ULh-lX-4dn" appends="YES" id="q3c-5e-bqE"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBY-eA-YzK">
+                                <rect key="frame" x="254" y="550" width="92" height="30"/>
+                                <state key="normal" title="Record Audio"/>
+                                <connections>
+                                    <action selector="recordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ke2-ZW-czd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFC-U6-aDg">
+                                <rect key="frame" x="249" y="512" width="103" height="30"/>
+                                <state key="normal" title="Camera Button"/>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzc-F7-jFt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MBY-eA-YzK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Su-WI-Z9m"/>
+                            <constraint firstItem="LFC-U6-aDg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LXK-X2-ntL"/>
+                            <constraint firstItem="dAW-Be-g3W" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SAT-vL-M0q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MBY-eA-YzK" secondAttribute="bottom" constant="20" id="Ys4-NI-3Dj"/>
+                            <constraint firstItem="dAW-Be-g3W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cGk-vh-qmM"/>
+                            <constraint firstItem="dAW-Be-g3W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ls1-df-AXW"/>
+                            <constraint firstItem="MBY-eA-YzK" firstAttribute="top" secondItem="LFC-U6-aDg" secondAttribute="bottom" constant="8" id="shj-PV-qDZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="dAW-Be-g3W" id="gyA-bX-WFZ"/>
+                        <outlet property="recordAudioButton" destination="MBY-eA-YzK" id="ruf-99-50w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ULh-lX-4dn">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="mDs-h1-f3K"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="340" y="389"/>
+        </scene>
+        <!--Story Page View Controller-->
+        <scene sceneID="4oB-4Y-mAc">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hZI-w4-mnR" customClass="StoryPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bj2-YF-Xer" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="1045"/>
+        </scene>
+    </scenes>
+</document>
